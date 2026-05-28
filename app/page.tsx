@@ -1,4 +1,4 @@
-import { CalendarCheck2, Clock3, Users, BellRing } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -7,9 +7,55 @@ import {
   PageShell,
 } from "@/components/site/page-shell";
 
+const organizerBenefits = [
+  {
+    title: "Easy Game Setup",
+    body: "Quickly create games for your favorite sports that friends and people in the area can join.",
+  },
+  {
+    title: "Complete Game Management",
+    body: "Set your schedule, location, and player limits in one dashboard.",
+  },
+  {
+    title: "Zero Cost Chasing",
+    body: "Stop chasing people on chat apps for money. OffDay collects payments automatically.",
+  },
+  {
+    title: "Cover Your Expenses",
+    body: "Factor in the price of facilities, refs, scorekeepers, and supplies directly into the game setup.",
+  },
+] as const;
+
+const playerBenefits = [
+  {
+    title: "Secure Your Spot",
+    body: "Drop into competitive local pickup games without the hassle of joining a formal league.",
+  },
+  {
+    title: "Quality Games",
+    body: "Play with other serious people who are invested because they paid to secure their spot.",
+  },
+  {
+    title: "No Flakes",
+    body: "If a game does not get enough players, you get your money back automatically.",
+  },
+] as const;
+
 export default function Home() {
   return (
     <PageShell>
+      <div className="mx-auto mb-14 max-w-6xl overflow-hidden rounded-xl border border-[var(--color-border)]">
+        <Image
+          src="/offday-hero-banner.png"
+          alt="People playing basketball, pickleball, kickball, and soccer at local pickup games"
+          width={1920}
+          height={640}
+          className="h-auto w-full object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, 1152px"
+        />
+      </div>
+
       <PageHeader
         label="OffDay"
         title={
@@ -31,41 +77,50 @@ export default function Home() {
       </PageHeader>
 
       <section className="mx-auto mt-14 max-w-6xl">
-        <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">
-          Why teams choose OffDay
+        <h2 className="text-2xl font-semibold text-[var(--color-foreground)] sm:text-3xl">
+          Why sports fans are loving OffDay
         </h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <Card className="h-full">
-            <CalendarCheck2 className="h-8 w-8 text-[var(--color-action)]" />
-            <h3 className="mt-4 text-xl font-semibold">Shared schedule</h3>
-            <p className="mt-2 text-[var(--color-muted-foreground)]">
-              One timeline for games, rest days, and changes so everyone stays
-              aligned.
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+              For Organizers
             </p>
+            <h3 className="mt-2 text-xl font-semibold text-[var(--color-foreground)]">
+              Host &amp; Earn
+            </h3>
+            <ul className="mt-6 space-y-5">
+              {organizerBenefits.map((item) => (
+                <li key={item.title}>
+                  <h4 className="font-semibold text-[var(--color-foreground)]">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">
+                    {item.body}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </Card>
+
           <Card className="h-full">
-            <Users className="h-8 w-8 text-[var(--color-accent)]" />
-            <h3 className="mt-4 text-xl font-semibold">Availability tracking</h3>
-            <p className="mt-2 text-[var(--color-muted-foreground)]">
-              Players quickly update status and organizers instantly see who is
-              in.
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-action)]">
+              For Players
             </p>
-          </Card>
-          <Card className="h-full">
-            <BellRing className="h-8 w-8 text-[var(--color-action)]" />
-            <h3 className="mt-4 text-xl font-semibold">Clear updates</h3>
-            <p className="mt-2 text-[var(--color-muted-foreground)]">
-              Announcements and reminders land in one place, not scattered
-              across threads.
-            </p>
-          </Card>
-          <Card className="h-full">
-            <Clock3 className="h-8 w-8 text-[var(--color-accent)]" />
-            <h3 className="mt-4 text-xl font-semibold">Less admin overhead</h3>
-            <p className="mt-2 text-[var(--color-muted-foreground)]">
-              Automate routine coordination so you can focus on the game, not
-              logistics.
-            </p>
+            <h3 className="mt-2 text-xl font-semibold text-[var(--color-foreground)]">
+              Join &amp; Play
+            </h3>
+            <ul className="mt-6 space-y-5">
+              {playerBenefits.map((item) => (
+                <li key={item.title}>
+                  <h4 className="font-semibold text-[var(--color-foreground)]">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">
+                    {item.body}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </Card>
         </div>
       </section>
