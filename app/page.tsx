@@ -44,18 +44,6 @@ const playerBenefits = [
 export default function Home() {
   return (
     <PageShell>
-      <div className="mx-auto mb-14 max-w-6xl overflow-hidden rounded-xl border border-[var(--color-border)]">
-        <Image
-          src="/offday-hero-banner.png"
-          alt="People playing basketball, pickleball, kickball, and soccer at local pickup games"
-          width={1920}
-          height={640}
-          className="h-auto w-full object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, 1152px"
-        />
-      </div>
-
       <PageHeader
         label="OffDay"
         title={
@@ -75,6 +63,18 @@ export default function Home() {
           </Button>
         </div>
       </PageHeader>
+
+      <div className="mx-auto mt-14 max-w-6xl overflow-hidden rounded-xl border border-[var(--color-border)]">
+        <Image
+          src="/offday-hero-banner.png"
+          alt="People playing basketball, pickleball, kickball, and soccer at local pickup games"
+          width={1920}
+          height={640}
+          className="h-auto w-full object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, 1152px"
+        />
+      </div>
 
       <section className="mx-auto mt-14 max-w-6xl">
         <h2 className="text-2xl font-semibold text-[var(--color-foreground)] sm:text-3xl">
@@ -126,10 +126,11 @@ export default function Home() {
       </section>
 
       <PageCta
-        title="Ready to stop chasing updates?"
-        description="See how OffDay fits your workflow whether you run the group or just show up and play."
-        buttonHref="/organizers"
-        buttonText="Explore for Organizers"
+        title="Ready to join a local pickup game?"
+        description="See available games on the OffDay app, join and play."
+        buttonHref="https://app.offday.games"
+        buttonText="Explore OffDay Games"
+        external
       />
     </PageShell>
   );
