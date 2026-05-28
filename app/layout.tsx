@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Footer } from "@/components/site/footer";
+import { Navbar } from "@/components/site/navbar";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,13 +12,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "OffDay — Organize Sports. Collect Payments. Play More.",
+  title: "OffDay | Organize, Earn and Play on your OffDay",
   description:
-    "The all-in-one tool for pickup games. Invite players, set a price (min $1), and automate your payouts. No more Venmo chasing.",
+    "The all-in-one platform to host local pickup games, split costs automatically, and play with reliable local players.",
   openGraph: {
-    title: "OffDay — Organize Sports. Collect Payments. Play More.",
+    title: "OffDay | Organize, Earn and Play on your OffDay",
     description:
-      "The all-in-one tool for pickup games. Invite players, set a price (min $1), and automate your payouts.",
+      "Host local pickup games, split costs automatically, and play with reliable local players.",
   },
 };
 
@@ -28,7 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

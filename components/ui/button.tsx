@@ -30,15 +30,12 @@ const buttonVariants = cva(
 
 interface ButtonProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants> {}
 
 export function Button({
   className,
   variant,
   size,
-  asChild,
   ...props
 }: ButtonProps) {
   const Comp = "a";
