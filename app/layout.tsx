@@ -11,14 +11,35 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = "https://offday.games";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "OffDay | Organize, Earn and Play on your OffDay",
   description:
     "The all-in-one platform to host local pickup games, split costs automatically, and play with reliable local players.",
   openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "OffDay",
     title: "OffDay | Organize, Earn and Play on your OffDay",
     description:
       "Host local pickup games, split costs automatically, and play with reliable local players.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "OffDay Games — organize, earn, and play local pickup sports",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OffDay | Organize, Earn and Play on your OffDay",
+    description:
+      "Host local pickup games, split costs automatically, and play with reliable local players.",
+    images: ["/og-image.png"],
   },
 };
 

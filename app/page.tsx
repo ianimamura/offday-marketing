@@ -29,7 +29,7 @@ const organizerBenefits = [
 const playerBenefits = [
   {
     title: "Secure Your Spot",
-    body: "Drop into competitive local pickup games without the hassle of joining a formal league.",
+    body: "Drop into competitive local pickup games without the commitment of joining a formal league.",
   },
   {
     title: "Quality Games",
