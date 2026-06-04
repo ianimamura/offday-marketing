@@ -28,12 +28,6 @@ export function Navbar() {
 
         <div className="flex items-center gap-3 sm:gap-5 md:gap-8">
           <Link
-            href="/"
-            className="text-xs font-medium text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)] sm:text-sm"
-          >
-            Home
-          </Link>
-          <Link
             href="/organizers"
             className="text-xs font-medium text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)] sm:text-sm"
           >
